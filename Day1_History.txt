@@ -1,0 +1,30 @@
+    1  ls
+    2  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.7.7.zip 
+    3  apt-get -y install unzip
+    4  ls
+    5  unzip sonarqube-6.7.7.zip -d /opt
+    6  ls
+    7  mv /opt/sonarqube-6.7.7/ /opt/sonar
+    8  apt-get update; apt-get install default-jdk -y
+    9  java -version 
+   10  sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+   11  wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
+   12  sudo apt-get -y install postgresql postgresql-contrib
+   13  systemctl start postgresql
+   14  systemctl enable postgresql
+   15  passwd postgres
+   16  su - postgres
+   17  vim /opt/sonar/conf/sonar.properties 
+   18  adduser sonar
+   19  usermod -aG sudo sonar
+   20  cd /opt/
+   21  chown -R sonar:sonar sonar
+   22  sudo -u sonar /bin/bash
+   23  history 
+   24  ls
+   25  cd 
+   26  ls
+   27  git clone https://github.com/amitvashist7/mindtree-may-devops.git
+   28  cd mindtree-may-devops/
+   29  ls
+   30  history > Day1_History.txt
