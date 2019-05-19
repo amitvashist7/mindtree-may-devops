@@ -1,0 +1,39 @@
+    1  ls
+    2  git clone https://github.com/amitvashist7/mindtree-devops.git
+    3  git clone https://github.com/amitvashist7/mindtree-may-devops.git
+    4  ls
+    5  cp -rf mindtree-devops/k8s mindtree-may-devops/
+    6  cd mindtree-may-devops/
+    7  git add . 
+    8  git commit -m 
+    9  git commit -m "Docker"
+   10  git push origin master
+   11  ls
+   12  cd k8s/
+   13  ls
+   14  cd setup/
+   15  ls
+   16  ./install-node.sh 
+   17  ls
+   18  docker version
+   19  ls
+   20  cd 
+   21  docker ps 
+   22  ls
+   23  docker images 
+   24  docker pull ubuntu
+   25  docker images 
+   26  docker pull centos
+   27  docker images 
+   28  cat /etc/*-release
+   29  docker run -it ubuntu 
+   30  uname  -a
+   31  docker run -it centos
+   32  docker search ubuntu:16.04
+   33  docker run -it ubuntu:16.04
+   34  docker ps 
+   35  docker ps -a
+   36  ls
+   37  cd mindtree-may-devops/
+   38  ls
+   39  history > Day1_Docker.txt
