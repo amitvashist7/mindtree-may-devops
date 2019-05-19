@@ -1,0 +1,14 @@
+    1  git clone https://github.com/amitvashist7/mindtree-may-devops.git
+    2  ls
+    3  cd mindtree-may-devops/
+    4  ls
+    5  apt-get update; apt-get install default-jdk -y
+    6  echo "deb https://jfrog.bintray.com/artifactory-debs xenial main" | sudo tee -a /etc/apt/sources.list
+    7  curl https://bintray.com/user/downloadSubjectPublicKey?username=jfrog | sudo apt-key add -
+    8  apt-get update
+    9  apt-get install jfrog-artifactory-cpp-ce
+   10  systemctl start artifactory.service
+   11  systemctl status artifactory.service
+   12  netstat -tulnp
+   13  ls
+   14  history > Day1_Jfrog_History.txt 
