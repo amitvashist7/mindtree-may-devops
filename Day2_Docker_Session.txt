@@ -1,0 +1,43 @@
+  238  docker version 
+  239  docker
+  240  docker run -it ubuntu 
+  241  docker ps 
+  242  docker run -it ubuntu 
+  243  docker ps 
+  244  docker ps -a
+  245  docker run -it ubuntu 
+  246  docker ps 
+  247  docker ps -a 
+  248  docker ps 
+  249  docker ps -a 
+  250  docker start 77108ee30cb9
+  251  docker ps -a 
+  252  docker ps 
+  253  docker attach 77108ee30cb9
+  254  docker ps 
+  255  docker stop 77108ee30cb9
+  256  docker ps 
+  257  history 
+  258  docker ps 
+  259  history 
+  260  docker run -it ubuntu 
+  261  docker run -it busybox 
+  262  docker ps 
+  263  docker ps -a
+  264  docker kill c364e2724c95
+  265  docker ps 
+  266  docker ps -a
+  267  docker start c364e2724c95
+  268  docker ps 
+  269  docker attach c364e2724c95
+  270  docker images 
+  271  docker pull amitvashist7/k8s-tiny-web
+  272  docker images 
+  273  docker pull amitvashist7/apache-ex4
+  274  docker login 
+  275  docker pull amitvashist7/apache-ex4
+  276  docker images 
+  277  ls
+  278  cd mindtree-may-devops/
+  279  ls
+  280  history > Day2_Docker_Session.txt
