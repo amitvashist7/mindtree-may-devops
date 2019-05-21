@@ -1,0 +1,326 @@
+    1  exit
+    2  egrep 'password' /etc/ssh/sshd_config 
+    3  egrep 'PermitRootLogin' /etc/ssh/sshd_config 
+    4  vim /etc/ssh/sshd_config 
+    5  egrep 'PermitRootLogin|PasswordAuthentication' /etc/ssh/sshd_config 
+    6  egrep 'PermitRootLogin|PasswordAuthentication' /etc/ssh/sshd_config | grep -v "^#"
+    7  passwd root
+    8  service sshd restart
+    9  ip addr 
+   10  passwd 
+   11  vi /etc/ssh/sshd_config 
+   12  passwd 
+   13  service sshd restart
+   14  exit
+   15  ls
+   16  apt-get update ; add-apt-repository ppa:webupd8team/java ;apt-get update
+   17  apt install oracle-java8-installer
+   18  ps -ef | grep apt
+   19  kill -9 1365 1370
+   20  ps -ef | grep apt
+   21  kill -9 2575 
+   22  ps -ef | grep apt
+   23  kill -9 2580
+   24  ls
+   25  ps -ef | grep apt
+   26  apt install oracle-java8-installer
+   27  ps -ef | grep apt
+   28  init 6 
+   29  ls
+   30  ps -ef | grep apt
+   31  apt install oracle-java8-installer
+   32  apt-get update 
+   33  apt install oracle-java8-installer
+   34  apt-get update; apt-get install default-jdk -y
+   35  java -version 
+   36  sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+   37  wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
+   38  apt-get -y install postgresql postgresql-contrib
+   39  systemctl start postgresql
+   40  systemctl enable postgresql
+   41  passwd postgres
+   42  su - postgres
+   43  wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.4.zip
+   44  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.7.zip
+   45  ls
+   46  apt-get -y install unzip
+   47  unzip sonarqube-7.7.zip -d /opt
+   48  mv /opt/sonarqube-7.7 /opt/sonarqube
+   49  ls
+   50  vim /opt/sonarqube/conf/sonar.properties
+   51  ls
+   52  vim /etc/systemd/sonar.service 
+   53  systemctl start sonar
+   54  vim /etc/systemd/sonar.service 
+   55  chmod +x /opt/sonarqube/bin/linux-x86-64/sonar.sh
+   56  systemctl start sonar
+   57  vim /etc/systemd/sonar.service 
+   58  /opt/sonarqube/bin/linux-x86-64/sonar.sh start
+   59  /opt/sonarqube/bin/linux-x86-64/sonar.sh status 
+   60  ip addr 
+   61  netstat -tulnp 
+   62  ps -ef | grep sonar 
+   63  ps -ef | grep -i sonar
+   64  /opt/sonarqube/bin/linux-x86-64/sonar.sh status 
+   65  /opt/sonarqube/bin/linux-x86-64/sonar.sh start
+   66  /opt/sonarqube/bin/linux-x86-64/sonar.sh status 
+   67  ps -ef | grep -i sonar
+   68  /opt/sonarqube/bin/linux-x86-64/sonar.sh status 
+   69  netstat -tulnp 
+   70  /opt/sonarqube/bin/linux-x86-64/sonar.sh status 
+   71  ls
+   72  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.7.7.zip
+   73  rm -rf /opt/sonarqube
+   74  ls
+   75  unzip sonarqube-6.7.7.zip -d /opt/
+   76  ls
+   77  mv /opt/sonarqube-6.7.7 /opt/sonarqube
+   78  cd /opt/sonarqube/
+   79  ls
+   80  cd
+   81  mv /opt/sonarqube /opt/sonar
+   82  ls
+   83  vim /opt/sonar/conf/sonar.properties
+   84  vim /etc/systemd/system/sonar.service
+   85  systemctl start sonar; systemctl enable sonar; systemctl status sonar
+   86  systemctl status sonar
+   87  netstat -tulnp
+   88  systemctl status sonar
+   89  netstat -tulnp
+   90  systemctl status sonar
+   91  ps -ef 
+   92  top
+   93  systemctl status sonar
+   94  netstat -tulnp
+   95  vim /opt/sonar/conf/sonar.properties
+   96  systemctl restart sonar
+   97  systemctl status sonar
+   98  ps -ef 
+   99  netstat -tulnp
+  100  ls
+  101  cd /opt/sonar/
+  102  ls
+  103  cd logs/
+  104  ls
+  105  tail -f sonar.log 
+  106  cd
+  107  cd /opt/sonar/
+  108  ls
+  109  ls -ltr 
+  110  exit
+  111  ls
+  112  systemctl stop sonar
+  113  systemctl status sonar
+  114  exit
+  115  ls
+  116  free  -m 
+  117  df -h 
+  118  free -m 
+  119  top
+  120  ls
+  121  cd jenkins-pipeline-as-code/
+  122  ls
+  123  cd jenkins/
+  124  ls
+  125  cd ..
+  126  ls
+  127  cd maven-example/
+  128  ls
+  129  cd multi1/
+  130  ls
+  131  cd target/
+  132  ls
+  133  cd sonar/
+  134  ls
+  135  cd ..
+  136  ls
+  137  cd ..
+  138  ls
+  139  mvn package
+  140  ls
+  141  cd target/
+  142  ls
+  143  cd sonar/
+  144  ls
+  145  cd ..
+  146  ls
+  147  adduser sonar
+  148  usermod -aG sudo sonar
+  149  cd /opt
+  150  chown -R sonar:sonar sonar
+  151  sudo -u sonar /bin/bash
+  152  echo "deb https://jfrog.bintray.com/artifactory-debs xenial main" | sudo tee -a /etc/apt/sources.list
+  153  curl https://bintray.com/user/downloadSubjectPublicKey?username=jfrog | sudo apt-key add -
+  154  apt-get update
+  155  apt-get install jfrog-artifactory-cpp-ce
+  156  systemctl start artifactory.service
+  157  systemctl status artifactory.service
+  158  ls
+  159  cd 
+  160  ls
+  161  git clone https://github.com/amitvashist7/jenkins-pipeline-as-code.git
+  162  ls
+  163  cd jenkins-pipeline-as-code/
+  164  ls
+  165  cd maven-example/
+  166  ls
+  167  mvn sonar:sonar   -Dsonar.host.url=http://172.31.0.11:9000/sonar   -Dsonar.login=a6f02a307e9cf79c8012f9ded52b1d4cfe8cd602
+  168  ls
+  169  cd target/
+  170  ls
+  171  cd sonar/
+  172  ls
+  173  cat report-task.txt 
+  174  sl
+  175  cd ..
+  176  sl
+  177  cd ..
+  178  cd
+  179  ls
+  180  cd jenkins-pipeline-as-code/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/
+  181  ls
+  182  mvn sonar:sonar   -Dsonar.host.url=http://172.31.0.11:9000/sonar   -Dsonar.login=a6f02a307e9cf79c8012f9ded52b1d4cfe8cd602
+  183  ls
+  184  cd ../../
+  185  ls
+  186  mvn sonar:sonar   -Dsonar.host.url=http://172.31.0.11:9000/sonar   -Dsonar.login=a6f02a307e9cf79c8012f9ded52b1d4cfe8cd602
+  187  init 0 
+  188  ls
+  189  systemctl status jfrog-artifactory-cpp-ce
+  190  systemctl status jfrog-artifactory
+  191  systemctl status jfrog
+  192  sl
+  193  ls
+  194  sudo -u sonar /bin/bash
+  195  su - sonar 
+  196  ls
+  197  cd /opt/
+  198  ls
+  199  ls -ltr 
+  200  chown -R sonar:sonar sonar
+  201  sudo -u sonar /bin/bash
+  202  ls
+  203  cat /etc/systemd/system/sonar.service
+  204  grep -i sonar /etc/passwd
+  205  grep -i sonar /etc/group 
+  206  ls
+  207  vi /etc/systemd/system/sonar.service
+  208  systemctl restart sonar 
+  209  systemctl daemon-reload
+  210  systemctl restart sonar 
+  211  systemctl status  sonar 
+  212  init 6 
+  213  exit
+  214  systemctl status  sonar 
+  215  sudo su - 
+  216  su - sonar 
+  217  ls
+  218  rm /etc/systemd/system/sonar.service
+  219  vi  /etc/systemd/system/sonar.service
+  220  init 6 
+  221  ls
+  222  exir
+  223  exit
+  224  sudo su - 
+  225  su - sonar 
+  226  history 
+  227  systemctl status artifactory.service
+  228  systemctl stop artifactory.service
+  229  systemctl disable artifactory.service
+  230  ls
+  231  su - sonar 
+  232  init 6 
+  233  exit
+  234  ls
+  235  sudo su - 
+  236  su - sonar 
+  237  init 0 
+  238  docker version 
+  239  docker
+  240  docker run -it ubuntu 
+  241  docker ps 
+  242  docker run -it ubuntu 
+  243  docker ps 
+  244  docker ps -a
+  245  docker run -it ubuntu 
+  246  docker ps 
+  247  docker ps -a 
+  248  docker ps 
+  249  docker ps -a 
+  250  docker start 77108ee30cb9
+  251  docker ps -a 
+  252  docker ps 
+  253  docker attach 77108ee30cb9
+  254  docker ps 
+  255  docker stop 77108ee30cb9
+  256  docker ps 
+  257  history 
+  258  docker ps 
+  259  history 
+  260  docker run -it ubuntu 
+  261  docker run -it busybox 
+  262  docker ps 
+  263  docker ps -a
+  264  docker kill c364e2724c95
+  265  docker ps 
+  266  docker ps -a
+  267  docker start c364e2724c95
+  268  docker ps 
+  269  docker attach c364e2724c95
+  270  docker images 
+  271  docker pull amitvashist7/k8s-tiny-web
+  272  docker images 
+  273  docker pull amitvashist7/apache-ex4
+  274  docker login 
+  275  docker pull amitvashist7/apache-ex4
+  276  docker images 
+  277  ls
+  278  cd mindtree-may-devops/
+  279  ls
+  280  history > Day2_Docker_Session.txt
+  281  vim Day2_Docker_Session.txt 
+  282  git add . 
+  283  git commit -m "Docker 2nd Session"
+  284  git push origin master
+  285  ls
+  286  cd 
+  287  ls
+  288  docker ps 
+  289  docker ps -a 
+  290  docker run -itd busybox
+  291  docker ps 
+  292  docker ps -a 
+  293  docker ps -a
+  294  docker kill 62536b657abf
+  295  docker rm 62536b657abf
+  296  docker ps -a 
+  297  docker ps -aq
+  298  docker kill $(docker ps -aq)
+  299  docker rm $(docker ps -aq)
+  300  docker ps -a 
+  301  docker run -itd --name app-A-node-1 busybox
+  302  docker run -itd --name app-A-node-2 busybox
+  303  docker run -itd --name app-B-node-1 busybox
+  304  docker run -itd --name app-B-node-2 busybox
+  305  docker run -itd --name app-B-node-3 busybox
+  306  docker run -itd --name app-C-node-1 busybox
+  307  docker ps 
+  308  docker kill $(docker ps -aq)
+  309  docker rm $(docker ps -aq)
+  310  docker run -it --name myweb-test-01 ubuntu
+  311  docker ps 
+  312  docker inspect myweb-test-01
+  313  curl "172.17.0.2"
+  314  docker attach myweb-test-01
+  315  curl "172.17.0.2"
+  316  docker ps 
+  317  docker images 
+  318  docker commit -p -m "My Apache Container" myweb-test-01 myapache:v1
+  319  docker images 
+  320  docker run -it --name myweb-test-02 myapache:v1
+  321  ls
+  322  history 
+  323  ls
+  324  cd mindtree-may-devops/
+  325  ls
+  326  history > Day3_Docker_Session.txt
