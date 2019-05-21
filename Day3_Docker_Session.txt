@@ -324,3 +324,69 @@
   324  cd mindtree-may-devops/
   325  ls
   326  history > Day3_Docker_Session.txt
+    1  git clone https://github.com/amitvashist7/mindtree-may-devops.git
+    2  ls
+    3  cd mindtree-may-devops/k8s/setup/
+    4  ./install-node.sh 
+    5  ls
+    6  cd
+    7  ls
+    8  cd mindtree-may-devops/
+    9  ls
+   10  mkdir docker/myapache -p 
+   11  ls
+   12  cd docker/myapache/
+   13  ls
+   14  docker images 
+   15  docker ps -a 
+   16  ls
+   17  vim Dockerfile
+   18  ls
+   19  docker build -t amitvashist7/gcp-ubuntu-myapache:v1 -f Dockerfile . 
+   20  docker images 
+   21  cd
+   22  docker run -d amitvashist7/gcp-ubuntu-myapache:v1
+   23  docker ps 
+   24  docker inspect 5a3ec5360985        
+   25  curl 172.17.0.2
+   26  curl 172.17.0.2/info.html
+   27  ls
+   28  cd mindtree-may-devops/docker/
+   29  ls
+   30  cd myapache/
+   31  ls
+   32  git add . 
+   33  git commit -m "Dockerfile"
+   34  git push origin master
+   35  ls
+   36  vim Dockerfile 
+   37  docker build -t amitvashist7/gcp-ubuntu-myapache:v2 -f Dockerfile . 
+   38  docker images 
+   39  docker run -d --name test01 amitvashist7/gcp-ubuntu-myapache:v2
+   40  docker ps 
+   41  docker inspect test01
+   42  curl 172.17.0.3
+   43  curl 172.17.0.3/info.html
+   44  curl localhost
+   45  netstat -tulnp
+   46  ls
+   47  ip addr 
+   48  docker network ls 
+   49  docker inpect network a63b712e007b        
+   50  docker inspect network a63b712e007b        
+   51  docker network a63b712e007b        
+   52  docker network inspect a63b712e007b        
+   53  ip addr 
+   54  docker network inspect a63b712e007b        
+   55  ls
+   56  docker run -d -p 30080:80 --name test03 amitvashist7/gcp-ubuntu-myapache:v2
+   57  docker ps 
+   58  netstat -tulnp 
+   59  curl localhost 
+   60  curl localhost:30080
+   61  curl localhost:30080/info.html
+   62  docker run -d -p 80:80 --name test04 amitvashist7/gcp-ubuntu-myapache:v2
+   63  ls
+   64  cd ..
+   65  ls
+   66  history >> Day3_Docker_Session.txt 

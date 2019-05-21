@@ -13,5 +13,8 @@ RUN apt-get install apache2 -y
 # Create a custom Web Page
 RUN echo "Hello World" > /var/www/html/info.html
 
+# My Service is avalibale on below ports.
+EXPOSE 80
+
 # Excute the Apache Service
 CMD ["/usr/sbin/apachectl", "-D" ,"FOREGROUND"]
