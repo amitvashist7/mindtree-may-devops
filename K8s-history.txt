@@ -1,0 +1,106 @@
+  992  ls
+  993  cd 01-first-app/
+  994  ls
+  995  vim helloworld.yml 
+  996  ls
+  997  cat helloworld.yml 
+  998  ls
+  999  kubectl create -f helloworld.yml 
+ 1000  kubectl get pods 
+ 1001  gcloud container clusters get-credentials k8s-demo --zone us-central1-a --project sapient-office-218912
+ 1002  kubectl get nodes 
+ 1003  kubectl get pods 
+ 1004  ls
+ 1005  cp -rf kubernetes-project/replication-controller mindtree-may-devops/k8s/02-Replication-controller
+ 1006  ls
+ 1007  cd mindtree-may-devops/k8s/
+ 1008  ls
+ 1009  git add . 
+ 1010  git commit -m "RC"; git push 
+ 1011  ls
+ 1012  cd 02-Replication-controller/
+ 1013  ls
+ 1014  cat helloworld-repl-controller.yml 
+ 1015  cd 
+ 1016  kubectl get pods 
+ 1017  kubectl get rc 
+ 1018  kubectl create -f mindtree-may-devops/k8s/02-Replication-controller/helloworld-repl-controller.yml 
+ 1019  kubectl get rc 
+ 1020  kubectl get pods 
+ 1021  kubectl edit rc helloworld-controller
+ 1022  kubectl get pods 
+ 1023  kubectl edit rc helloworld-controller
+ 1024  kubectl get pods 
+ 1025  kubectl delete pod helloworld-controller-b7nj5
+ 1026  kubectl get pods 
+ 1027  kubectl delete pod helloworld-controller-ws7hg
+ 1028  kubectl get pods 
+ 1029  kubectl delete rc helloworld-controller
+ 1030  kubectl get pods 
+ 1031  kubectl create -f mindtree-may-devops/k8s/02-Replication-controller/helloworld-repl-controller.yml 
+ 1032  ls
+ 1033  kubectl get rc 
+ 1034  kubectl scale --replicas=5  -f mindtree-may-devops/k8s/02-Replication-controller/helloworld-repl-controller.yml 
+ 1035  kubectl get pods 
+ 1036  kubectl scale --replicas=5  -f mindtree-may-devops/k8s/02-Replication-controller/helloworld-repl-controller.yml 
+ 1037  kubectl scale --replicas=10 rc helloworld-controller
+ 1038  kubectl get pods 
+ 1039  kubectl delete -f mindtree-may-devops/k8s/02-Replication-controller/helloworld-repl-controller.yml 
+ 1040  kubectl get rc 
+ 1041  kubectl get pods 
+ 1042  ls
+ 1043  cp -rf kubernetes-project/deployment mindtree-may-devops/k8s/03-Deployments
+ 1044  ls
+ 1045  cd mindtree-may-devops/
+ 1046  git add . 
+ 1047  git commit -m "Deployments"; git push 
+ 1048  ls
+ 1049  kubectl get deployments 
+ 1050  ls
+ 1051  kubectl create -f k8s/03-Deployments/helloworld.yml 
+ 1052  ls
+ 1053  kubectl get deployments
+ 1054  kubectl get rs
+ 1055  kubectl get pods 
+ 1056  vim k8s/03-Deployments/helloworld.yml 
+ 1057  kubectl create -f k8s/03-Deployments/helloworld.yml 
+ 1058  kubectl get pods 
+ 1059  kubectl get rc 
+ 1060  kubectl get rs
+ 1061  kubectl delete pod helloworld-deployment-6664884558-ck48v
+ 1062  kubectl get pods 
+ 1063  kubectl get rs
+ 1064  kubectl delete rs helloworld-deployment-test-6664884558
+ 1065  ls
+ 1066  kubectl get rs 
+ 1067  kubectl delete rs helloworld-deployment-test-6664884558
+ 1068  kubectl delete deployment helloworld-deployment-test
+ 1069  kubectl get rs 
+ 1070  kubectl get pods 
+ 1071  kubectl describe pod helloworld-deployment-6664884558-j8kkk
+ 1072  ls
+ 1073  kubectl get deployments 
+ 1074  kubectl rollout status deployment
+ 1075  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2
+ 1076  kubectl rollout status deployment helloworld-deployment
+ 1077  kubectl edit deployment helloworld-deployment
+ 1078  kubectl get pods 
+ 1079  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3
+ 1080  kubectl rollout status deployment helloworld-deployment
+ 1081  kubectl get pods 
+ 1082  kubectl get rs 
+ 1083  kubectl describe rs helloworld-deployment-56568f6d7c
+ 1084  kubectl get rs 
+ 1085  kubectl describe rs helloworld-deployment-6664884558
+ 1086  kubectl get rs 
+ 1087  kubectl describe rs helloworld-deployment-7c479664b6
+ 1088  kubectl rollout status deployment helloworld-deployment
+ 1089  kubectl rollout undo deployment helloworld-deployment
+ 1090  kubectl rollout status deployment helloworld-deployment
+ 1091  kubectl get rs
+ 1092  kubectl get pod s
+ 1093  kubectl get pods
+ 1094  kubectl describe pod helloworld-deployment-7c479664b6-2dkcg
+ 1095  ls
+ 1096  history 
+ 1097  history  > K8s-history.txt
