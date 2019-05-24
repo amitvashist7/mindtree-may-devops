@@ -1,0 +1,100 @@
+  975  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2
+  976  kubectl rollout status deployment helloworld-deployment
+  977  kubectl edit deployment helloworld-deployment
+  978  kubectl get pods 
+  979  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3
+  980  kubectl rollout status deployment helloworld-deployment
+  981  kubectl get pods 
+  982  kubectl get rs 
+  983  kubectl describe rs helloworld-deployment-56568f6d7c
+  984  kubectl get rs 
+  985  kubectl describe rs helloworld-deployment-6664884558
+  986  kubectl get rs 
+  987  kubectl describe rs helloworld-deployment-7c479664b6
+  988  kubectl rollout status deployment helloworld-deployment
+  989  kubectl rollout undo deployment helloworld-deployment
+  990  kubectl rollout status deployment helloworld-deployment
+  991  kubectl get rs
+  992  kubectl get pod s
+  993  kubectl get pods
+  994  kubectl describe pod helloworld-deployment-7c479664b6-2dkcg
+  995  ls
+  996  history 
+  997  history  > K8s-history.txt
+  998  vim K8s-history.txt 
+  999  git add . 
+ 1000  git commit -m "Deployments-History"; git push 
+ 1001  gcloud container clusters get-credentials k8s-demo --zone us-central1-a --project sapient-office-218912
+ 1002  kubectl get nodes 
+ 1003  ls
+ 1004  cd mindtree-may-devops/n
+ 1005  cd mindtree-may-devops/
+ 1006  ls
+ 1007  cd k8s/03-Deployments/
+ 1008  ls
+ 1009  kubectl create -f helloworld.yml 
+ 1010  cd 
+ 1011  kubectl get deployments 
+ 1012  kubectl get pods 
+ 1013  kubectl expose deployment helloworld-deployment-test --type=NodePort
+ 1014  kubectl get svc 
+ 1015  kubectl get pods 
+ 1016  kubectl get pods -o wide 
+ 1017  kubectl get svc 
+ 1018  kubectl edit svc helloworld-deployment-test
+ 1019  kubectl get svc 
+ 1020  curl 10.128.15.194:31363
+ 1021  kubectl get svc 
+ 1022  kubectl describe svc helloworld-deployment-test
+ 1023  kubectl get pods --show-labels
+ 1024  ]
+ 1025  kubectl scale --replicas=10 deployment helloworld-deployment-test
+ 1026  kubectl get pods --show-labels
+ 1027  kubectl describe svc helloworld-deployment-test
+ 1028  kubectl scale --replicas=1 deployment helloworld-deployment-test
+ 1029  kubectl get pods --show-labels
+ 1030  kubectl describe svc helloworld-deployment-test
+ 1031  kubectl scale --replicas=2 deployment helloworld-deployment-test
+ 1032  kubectl describe svc helloworld-deployment-test
+ 1033  kubectl scale --replicas=10 deployment helloworld-deployment-test
+ 1034  kubectl set image deployment helloworld-deployment-test k8s-demo=amitvashist7/k8s-tiny-web:2
+ 1035  kubectl rollout status deployment helloworld-deployment-test
+ 1036  kubectl set image deployment helloworld-deployment-test k8s-demo=amitvashist7/k8s-tiny-web:3
+ 1037  kubectl rollout 
+ 1038  kubectl rollout history deoloyment helloworld-deployment-test
+ 1039  kubectl rollout history deployment helloworld-deployment-test
+ 1040  kubectl undo deployment  helloworld-deployment-test
+ 1041  kubectl rollout undo deployment  helloworld-deployment-test
+ 1042  kubectl rollout history deployment helloworld-deployment-test
+ 1043  kubectl rollout undo deployment  helloworld-deployment-test
+ 1044  kubectl rollout history deployment helloworld-deployment-test
+ 1045  kubectl rollout history deployment helloworld-deployment-test --revision=1
+ 1046  kubectl rollout history deployment helloworld-deployment-test --revision=2
+ 1047  kubectl rollout history deployment helloworld-deployment-test --revision=4
+ 1048  kubectl rollout history deployment helloworld-deployment-test --revision=5
+ 1049  kubectl rollout undo deployment  helloworld-deployment-test --to-revision=1
+ 1050  kubectl rollout history deployment helloworld-deployment-test 
+ 1051  kubectl get rs
+ 1052  ls
+ 1053  cd mindtree-may-devops/
+ 1054  ls
+ 1055  cd k8s/01-first-app/
+ 1056  ls
+ 1057  kubectl create -f helloworld.yml 
+ 1058  vim helloworld-service.yml 
+ 1059  vim helloworld-nodeport-service.yml 
+ 1060  ls
+ 1061  kubectl create -f helloworld-service.yml 
+ 1062  kubectl get svc 
+ 1063  kubectl delete deployment,service helloworld-deployment-test
+ 1064  kubectl get pods,svc
+ 1065  kubectl delete pods nodehelloworld
+ 1066  kubectl delete svc helloworld-service
+ 1067  kubectl get svc,pods,deployments
+ 1068  ls
+ 1069  cd ../
+ 1070  ls
+ 1071  cd ..
+ 1072  ls
+ 1073  history 
+ 1074  history > K8s-history-v2.txt 
