@@ -1,0 +1,80 @@
+    1  apt-get update ; apt-get install ansible -y 
+    2  ansible --version 
+    3  git clone https://github.com/amitvashist7/mindtree-may-devops.git
+    4  ls
+    5  cd mindtree-may-devops/
+    6  ls
+    7  mkdir  History
+    8  mv Day* History/
+    9  ls
+   10  mv K8s-history* History/
+   11  ls
+   12  mkdir ansible 
+   13  cd ansible/
+   14  ls
+   15  mkdir 01-Inventory
+   16  cd 01-Inventory/
+   17  ls
+   18  vim inventory
+   19  ssh 172.31.0.11
+   20  ssh 172.31.0.12
+   21  ls
+   22  ansible 172.31.0.11 -i inventory -m ping -u root -k 
+   23  apt-get install sshpass -y 
+   24  ansible 172.31.0.11 -i inventory -m ping -u root -k 
+   25  ansible all -i inventory -m ping -u root -k 
+   26  ansible-doc  -l 
+   27  ansible-doc  yum 
+   28  ls
+   29  ansible 172.31.0.11 -i inventory -m yum -a "name=net-tools state=present" -u root -k 
+   30  ls
+   31  cd ..
+   32  ls
+   33  cp -rf 01-Inventory 02-Groups
+   34  cd 02-Groups/
+   35  ls
+   36  vim inventory 
+   37  ansible all -i inventory -m ping -u root -k 
+   38  ansible web -i inventory -m ping -u root -k 
+   39  ansible db -i inventory -m ping -u root -k 
+   40  ls
+   41  cd..
+   42  ls
+   43  cd ..
+   44  ls
+   45  cp -rf 02-Groups/ 03-PlayBook
+   46  ls
+   47  cd 03-PlayBook/
+   48  ls
+   49  vim webserver.yaml
+   50  ansible-playbook -i inventory -u root -k webserver.yaml 
+   51  vim webserver.yaml
+   52  ls
+   53  ansible-playbook -i inventory -u root -k webserver.yaml 
+   54  mkdir templates
+   55  vim templates/index.html
+   56  ansible-playbook -i inventory -u root -k webserver.yaml 
+   57  ls
+   58  cd ..
+   59  ls
+   60  cd ..
+   61  ls
+   62  git add . 
+   63  git commit -m "Ansible"
+   64  ls
+   65  cd ansible/
+   66  ls
+   67  cd 03-PlayBook/
+   68  s
+   69  ls
+   70  vim webserver.yaml 
+   71  ls
+   72  git push origin master
+   73  ls
+   74  cd ..
+   75  l
+   76  cd ..
+   77  ls
+   78  cd History/
+   79  history 
+   80  history > Ansible_History.txt
