@@ -1,0 +1,25 @@
+---
+
+- hosts: web
+  sudo: yes 
+
+  tasks:
+  - name: Install Apache Packages
+    yum: name=httpd state=present
+
+  - name: Start Apache Service
+    service: name=httpd state=started 
+
+  - name: Deploy Apache Web Pages
+    copy: src=templates/index.html dest=/var/www/html/index.html
+
+- hosts: db
+  sudo: yes 
+
+  tasks:
+  - name: Install NTP Packages
+    yum: name=ntp state=present
+
+  - name: Start NTPD Service
+    service: name=ntpd state=started 
+
